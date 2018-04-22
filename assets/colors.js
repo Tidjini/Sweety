@@ -1,4 +1,4 @@
-export const colors = {
+export default {
   sapGreen: "#4E8B1A",
   rybGreen: "#69B628",
   teaGreen: "#D6EBC4",
