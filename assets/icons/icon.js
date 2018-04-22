@@ -19,8 +19,10 @@ export default ({ iconWidth, iconHeight }) => {
         alignItems: "center",
         justifyContent: "center",
         shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 1,
+        elevation: 2,
+        position: "relative"
       }}
     >
       <Image
