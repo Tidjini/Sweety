@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 
-import { Image, Text, View, Dimensions } from "react-native";
+import { Image, Text, View, Dimensions, TextInput } from "react-native";
 
 //created library and Component
 import colors from "../../../assets/colors";
-import { Button } from "../common";
+import { Button, Input, OutlineButton, CircularButton } from "../common";
 import AppIcon from "../../../assets/icons/icon";
 
 const { width, height } = Dimensions.get("window");
 const background = require("../../../assets/images/back_01.jpg");
+const google = require("../../../assets/icons/google.png");
+const facebook = require("../../../assets/icons/facebook.png");
 
-export default class Wellcome extends Component {
+export default class Login extends Component {
   render() {
     const {
       backImage,
@@ -29,17 +31,52 @@ export default class Wellcome extends Component {
 
           <Text style={wellcome}>Wellcome to Sweety</Text>
           <Text style={description}>Log in to conutinue</Text>
+          <View style={{ height: 80, width: width - 100, marginTop: 30 }}>
+            <Text style={{ fontSize: 10, fontWeight: "bold" }}>
+              Email ou Tél
+            </Text>
+            <TextInput style={{ marginTop: -7 }} />
+            <Text style={{ fontSize: 10, fontWeight: "bold" }}>Password</Text>
+            <TextInput style={{ marginTop: -7 }} />
+          </View>
           <View style={buttons}>
             <Button buttonWidth={width - 200} buttonHeight={35}>
               <Text>SIGN IN</Text>
             </Button>
-            <Button
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <CircularButton
+              buttonWidth={48}
+              buttonHeight={48}
               color={"#FFFFFF"}
-              buttonWidth={width - 200}
-              buttonHeight={35}
             >
-              <Text style={{ color: colors.rybGreen }}>EXPLORE</Text>
-            </Button>
+              <Image
+                source={google}
+                style={{
+                  width: 26,
+                  height: 26,
+                  resizeMode: "cover",
+                  marginTop: 10,
+                  marginLeft: 10
+                }}
+              />
+            </CircularButton>
+            <CircularButton
+              buttonWidth={48}
+              buttonHeight={48}
+              color={"#FFFFFF"}
+            >
+              <Image
+                source={facebook}
+                style={{
+                  width: 26,
+                  height: 26,
+                  resizeMode: "cover",
+                  marginTop: 10,
+                  marginLeft: 10
+                }}
+              />
+            </CircularButton>
           </View>
         </View>
       </View>
