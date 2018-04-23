@@ -15,14 +15,15 @@ export default ({ price, autre, image, title }) => {
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
-        shadowColor: "#000",
+        shadowColor: "#D6EBC4",
         borderRadius: 10,
 
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 1,
+        shadowOffset: { width: 1, height: 5 },
+        shadowOpacity: 0.5,
         elevation: 2,
         position: "relative",
-        marginTop: 10
+        marginTop: 10,
+        backgroundColor: "#fff"
       }}
     >
       <Image

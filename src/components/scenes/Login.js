@@ -20,7 +20,9 @@ export default class Login extends Component {
       title,
       wellcome,
       description,
-      buttons
+      buttons,
+      circularButtonsContainer,
+      circularButtonImage
     } = styles;
     return (
       <View>
@@ -44,38 +46,20 @@ export default class Login extends Component {
               <Text>SIGN IN</Text>
             </Button>
           </View>
-          <View style={{ flexDirection: "row" }}>
+          <View style={circularButtonsContainer}>
             <CircularButton
               buttonWidth={48}
               buttonHeight={48}
               color={"#FFFFFF"}
             >
-              <Image
-                source={google}
-                style={{
-                  width: 26,
-                  height: 26,
-                  resizeMode: "cover",
-                  marginTop: 10,
-                  marginLeft: 10
-                }}
-              />
+              <Image source={google} style={circularButtonImage} />
             </CircularButton>
             <CircularButton
               buttonWidth={48}
               buttonHeight={48}
               color={"#FFFFFF"}
             >
-              <Image
-                source={facebook}
-                style={{
-                  width: 26,
-                  height: 26,
-                  resizeMode: "cover",
-                  marginTop: 10,
-                  marginLeft: 10
-                }}
-              />
+              <Image source={facebook} style={circularButtonImage} />
             </CircularButton>
           </View>
         </View>
@@ -107,5 +91,13 @@ const styles = {
     marginTop: 20
   },
   description: { color: colors.darkGunmetal, textAlign: "center" },
-  buttons: { marginTop: 30 }
+  buttons: { marginTop: 30 },
+  circularButtonsContainer: { flexDirection: "row" },
+  circularButtonImage: {
+    width: 26,
+    height: 26,
+    resizeMode: "cover",
+    marginTop: 10,
+    marginLeft: 10
+  }
 };

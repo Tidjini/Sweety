@@ -13,7 +13,8 @@ export default ({ price, autre, image, title }) => {
         borderRadius: 10,
         margin: 10,
         width: width - 100,
-        height: CARD_HEIGHT
+        height: CARD_HEIGHT,
+        backgroundColor: "#fff"
       }}
     >
       <Image
@@ -31,7 +32,7 @@ export default ({ price, autre, image, title }) => {
           height: CARD_HEIGHT,
           borderRadius: 10,
           position: "absolute",
-          backgroundColor: "#00000045",
+          backgroundColor: "#D6EBC433",
           flexDirection: "column",
           justifyContent: "space-between"
         }}
@@ -75,7 +76,8 @@ export default ({ price, autre, image, title }) => {
         <Text
           style={{
             borderRadius: 10,
-            color: "#FFFFFF",
+            fontWeight: "bold",
+            color: colors.darkGunmetal,
             justifyContent: "space-between",
             margin: 10
           }}
