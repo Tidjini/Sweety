@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import { Text, View, Dimensions, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/EvilIcons';
+import React, { Component } from "react";
+import { Text, View, Dimensions, Image } from "react-native";
+import Icon from "react-native-vector-icons/EvilIcons";
 
-import { Header } from '../common';
-import { productCardOne } from '../pieces/productCardOne';
-import colors from '../../../assets/colors';
+import { Header } from "../common";
+import colors from "../../../assets/colors";
+import MostRatedProductList from "../pieces/MostRatedProductList";
+
+const { width, height } = Dimensions.get("window");
+const product = require("../../../assets/products/img_01.jpg");
 
 export default class Main extends Component {
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: '#CCCCCC' }}>
+      <View style={{ flex: 1, backgroundColor: "#CCCCCC00" }}>
         <Header primaryIcon="navicon" secondaryIcon="search" thirdIcon="heart">
-          <View style={{ alignItems: 'center' }}>
+          <View style={{ alignItems: "center" }}>
             <Text
               style={{
                 fontSize: 18,
-                fontWeight: 'bold',
+                fontWeight: "bold",
                 color: colors.darkGunmetal
               }}
             >
@@ -34,15 +37,15 @@ export default class Main extends Component {
 
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center'
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center"
           }}
         >
           <Text
             style={{
               fontSize: 16,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               paddingTop: 16,
               paddingLeft: 16,
               color: colors.darkGunmetal
@@ -53,7 +56,7 @@ export default class Main extends Component {
           <Text
             style={{
               fontSize: 12,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               paddingTop: 16,
               paddingRight: 16,
               color: colors.sapGreen
@@ -62,7 +65,7 @@ export default class Main extends Component {
             View all
           </Text>
         </View>
-        <productCardOne />
+        <MostRatedProductList />
       </View>
     );
   }
