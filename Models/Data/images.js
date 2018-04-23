@@ -1,0 +1,28 @@
+const images = [
+  require("../../assets/products/img_01.jpg"),
+  require("../../assets/products/img_02.jpg"),
+  require("../../assets/products/img_03.jpg"),
+  require("../../assets/products/img_04.jpg"),
+  require("../../assets/products/img_05.jpg"),
+  require("../../assets/products/img_06.jpg"),
+  require("../../assets/products/img_07.jpg"),
+  require("../../assets/products/img_08.jpg"),
+  require("../../assets/products/img_09.jpg"),
+  require("../../assets/products/img_10.jpg"),
+  require("../../assets/products/img_11.jpg"),
+  require("../../assets/products/img_12.jpg"),
+  require("../../assets/products/img_13.jpg"),
+  require("../../assets/products/img_14.jpg"),
+  require("../../assets/products/img_15.jpg"),
+  require("../../assets/products/img_16.jpg"),
+  require("../../assets/products/img_17.jpg"),
+  require("../../assets/products/img_18.jpg"),
+  require("../../assets/products/img_19.jpg"),
+  require("../../assets/products/img_20.jpg"),
+  require("../../assets/products/img_21.jpg"),
+  require("../../assets/products/img_22.jpg"),
+  require("../../assets/products/img_23.jpg"),
+  require("../../assets/products/img_24.jpg"),
+  require("../../assets/products/img_25.jpg")
+];
+export { images };

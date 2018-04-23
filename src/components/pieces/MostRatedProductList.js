@@ -5,24 +5,11 @@ import { Spinner } from "../common";
 
 const { width, height } = Dimensions.get("window");
 
-import ProductCard from "./MostRatedProductCard";
+import MostRatedProductCard from "./MostRatedProductCard";
 import colors from "../../../assets/colors";
 
 import fakus from "../../../Models/Data/Fake.json";
-
-const images = [
-  require("../../../assets/products/img_01.jpg"),
-  require("../../../assets/products/img_02.jpg"),
-  require("../../../assets/products/img_03.jpg"),
-  require("../../../assets/products/img_04.jpg"),
-  require("../../../assets/products/img_05.jpg"),
-  require("../../../assets/products/img_06.jpg"),
-  require("../../../assets/products/img_07.jpg"),
-  require("../../../assets/products/img_08.jpg"),
-  require("../../../assets/products/img_09.jpg"),
-  require("../../../assets/products/img_10.jpg"),
-  require("../../../assets/products/img_11.jpg")
-];
+import { images } from "../../../Models/Data/images";
 
 export default class MostRatedProductList extends Component {
   constructor(props) {
@@ -52,11 +39,12 @@ export default class MostRatedProductList extends Component {
       return (
         <FlatList
           horizontal
+          showsHorizontalScrollIndicator={false}
           data={this.state.dataSource}
           renderItem={({ item: rowData }) => {
             return (
-              <ProductCard
-                image={images[rowData.imageIndex]}
+              <MostRatedProductCard
+                image={images[rowData.image]}
                 title={rowData.title}
                 price={rowData.price}
                 autre={rowData.autre}
@@ -76,5 +64,5 @@ export default class MostRatedProductList extends Component {
 }
 
 const styles = {
-  container: { flex: 1, backgroundColor: colors.whiteYellow }
+  container: { backgroundColor: colors.whiteYellow }
 };

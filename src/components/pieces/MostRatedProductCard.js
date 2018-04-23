@@ -2,6 +2,8 @@ import React from "react";
 import { Text, View, Dimensions, Image } from "react-native";
 import Icon from "react-native-vector-icons/EvilIcons";
 const { width, height } = Dimensions.get("window");
+
+const CARD_HEIGHT = 170;
 import colors from "../../../assets/colors";
 
 export default ({ price, autre, image, title }) => {
@@ -11,14 +13,14 @@ export default ({ price, autre, image, title }) => {
         borderRadius: 10,
         margin: 10,
         width: width - 100,
-        height: 200
+        height: CARD_HEIGHT
       }}
     >
       <Image
         source={image}
         style={{
           width: width - 100,
-          height: 200,
+          height: CARD_HEIGHT,
           borderRadius: 10,
           resizeMode: "cover"
         }}
@@ -26,7 +28,7 @@ export default ({ price, autre, image, title }) => {
       <View
         style={{
           width: width - 100,
-          height: 200,
+          height: CARD_HEIGHT,
           borderRadius: 10,
           position: "absolute",
           backgroundColor: "#00000045",
