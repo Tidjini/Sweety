@@ -1,33 +1,69 @@
-import React, { Component } from "react";
-import { Text, View, Dimensions, Image } from "react-native";
+import React, { Component } from 'react';
+import { Text, View, Dimensions, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/EvilIcons';
 
-import { Header } from "../common";
-import colors from "../../../assets/colors";
+import { Header } from '../common';
+import { productCardOne } from '../pieces/productCardOne';
+import colors from '../../../assets/colors';
 
 export default class Main extends Component {
   render() {
     return (
-      <Header primaryIcon="navicon" secondaryIcon="search" thirdIcon="heart">
-        <View style={{ alignItems: "center" }}>
+      <View style={{ flex: 1, backgroundColor: '#CCCCCC' }}>
+        <Header primaryIcon="navicon" secondaryIcon="search" thirdIcon="heart">
+          <View style={{ alignItems: 'center' }}>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: 'bold',
+                color: colors.darkGunmetal
+              }}
+            >
+              Sweety
+            </Text>
+            <Text
+              style={{
+                fontSize: 10,
+                color: colors.darkGunmetal
+              }}
+            >
+              1589 GATEAUX
+            </Text>
+          </View>
+        </Header>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}
+        >
           <Text
             style={{
-              fontSize: 18,
-              fontWeight: "bold",
+              fontSize: 16,
+              fontWeight: 'bold',
+              paddingTop: 16,
+              paddingLeft: 16,
               color: colors.darkGunmetal
             }}
           >
-            Sweety
+            Most Rated
           </Text>
           <Text
             style={{
-              fontSize: 10,
-              color: colors.darkGunmetal
+              fontSize: 12,
+              fontWeight: 'bold',
+              paddingTop: 16,
+              paddingRight: 16,
+              color: colors.sapGreen
             }}
           >
-            1589 GATEAUX
+            View all
           </Text>
         </View>
-      </Header>
+        <productCardOne />
+      </View>
     );
   }
 }
