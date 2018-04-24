@@ -11,7 +11,7 @@ const OutlineButton = ({ onPress, children }) => {
   );
 };
 const styles = {
-  outlineButton: { alignItems: "center", padding: 10 }
+  outlineButton: { alignItems: "center", padding: 10, height: 35 }
 };
 
 export { OutlineButton };
