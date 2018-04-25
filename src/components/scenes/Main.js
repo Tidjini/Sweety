@@ -7,16 +7,22 @@ import {
   Image,
   StyleSheet
 } from "react-native";
+import { connect } from "react-redux";
+import { list } from "../../actions";
+
 import Icon from "react-native-vector-icons/EvilIcons";
 
-import { Header } from "../common";
+import { Header, OutlineButton } from "../common";
 import colors from "../../../assets/colors";
 import MostRatedProductList from "../pieces/MostRatedProductList";
 import ProductList from "../pieces/ProductList";
 
 const { width, height } = Dimensions.get("window");
 
-export default class Main extends Component {
+class Main extends Component {
+  viewAllProduct() {
+    this.props.list();
+  }
   render() {
     const {
       headerTitle,
@@ -39,7 +45,16 @@ export default class Main extends Component {
         <ScrollView style={scrollStyle}>
           <View style={scrollView}>
             <Text style={mostRated}>Most Rated</Text>
-            <Text style={viewAll}>View all</Text>
+            <OutlineButton onPress={this.viewAllProduct.bind(this)}>
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  color: colors.sapGreen
+                }}
+              >
+                View All
+              </Text>
+            </OutlineButton>
           </View>
           <MostRatedProductList />
           <Text style={browseProducts}>Browse All product</Text>
@@ -89,3 +104,5 @@ const styles = StyleSheet.create({
     color: colors.darkGunmetal
   }
 });
+
+export default connect(null, { list })(Main);

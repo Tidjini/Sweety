@@ -5,7 +5,7 @@ import Wellcome from "./components/scenes/Wellcome";
 import Login from "./components/scenes/Login";
 import Main from "./components/scenes/Main";
 import ProductDetails from "./components/scenes/ProductDetails";
-import ProductList from "./components/scenes/ProductDetails";
+import ProductList from "./components/scenes/ProductList";
 
 const RouterComponent = () => {
   return (

@@ -30,7 +30,7 @@ export const details = () => {
   return dispatch => {
     setTimeout(() => {
       dispatch({ type: ENTER_DETAILS });
-      Actions.product_details();
+      Actions.productDetails();
     }, 50);
   };
 };
@@ -38,7 +38,7 @@ export const list = () => {
   return dispatch => {
     setTimeout(() => {
       dispatch({ type: ENTER_LIST });
-      Actions.product_list();
+      Actions.productList();
     }, 50);
   };
 };
