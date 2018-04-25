@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
 import { Image, Text, View, Dimensions } from "react-native";
+import { main } from "../../actions";
 
 //created library and Component
 import colors from "../../../assets/colors";
@@ -10,7 +11,11 @@ import AppIcon from "../../../assets/icons/icon";
 const { width, height } = Dimensions.get("window");
 const background = require("../../../assets/images/back_01.jpg");
 
-export default class Wellcome extends Component {
+class Wellcome extends Component {
+  onExplore() {
+    this.props.main();
+  }
+
   render() {
     const {
       backImage,
@@ -39,6 +44,7 @@ export default class Wellcome extends Component {
               color={"#FFFFFF"}
               buttonWidth={width - 200}
               buttonHeight={35}
+              onPress={this.onExplore.bind(this)}
             >
               <Text style={{ color: colors.rybGreen }}>EXPLORE</Text>
             </Button>
@@ -74,3 +80,5 @@ const styles = {
   description: { color: colors.darkGunmetal, textAlign: "center" },
   buttons: { marginTop: 30 }
 };
+
+export default connect(null, { main })(Wellcome);
