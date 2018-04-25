@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, Image, Dimensions, StyleSheet } from "react-native";
+import { Actions } from "react-native-router-flux";
+
+import { connect } from "react-redux";
 import { Rating } from "react-native-ratings";
 
 import { Header, Button, OutlineButton } from "../common";
@@ -8,7 +11,11 @@ const product = require("../../../assets/products/img_25.jpg");
 const profile = require("../../../assets/profiles/pro_02.jpg");
 const { width, height } = Dimensions.get("window");
 
-export default class ProductDetails extends Component {
+class ProductDetails extends Component {
+  onReturnPress() {
+    console.log("return action");
+    Actions.pop();
+  }
   render() {
     const { headerTitle, headerTitlePrimary, headerTitleSecondary } = styles;
     return (
@@ -32,6 +39,7 @@ export default class ProductDetails extends Component {
         >
           <Header
             primaryIcon="arrow-left"
+            primaryAction={this.onReturnPress.bind(this)}
             secondaryIcon="search"
             thirdIcon="share-google"
             color={"#fff"}
@@ -125,7 +133,6 @@ export default class ProductDetails extends Component {
                 Callback method when the user finishes rating. Gives you the
                 final rating value as a whole number (required),Callback method
                 when the user finishes rating. Gives you the final rating value
-                as a whole number (required)
               </Text>
               <View
                 style={{
@@ -196,3 +203,11 @@ const styles = StyleSheet.create({
     color: colors.darkGunmetal
   }
 });
+
+const mapStateToProps = state => {
+  return {
+    itemId: state.routes.details
+  };
+};
+
+export default connect(mapStateToProps)(ProductDetails);

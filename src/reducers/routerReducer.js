@@ -15,6 +15,8 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
+  console.log(action);
+
   switch (action.type) {
     case START_APP:
       return { ...state, start: "start" };
@@ -25,7 +27,7 @@ export default (state = INITIAL_STATE, action) => {
     case ENTER_LIST:
       return { ...state, list: "list" };
     case ENTER_DETAILS:
-      return { ...state, details: "details" };
+      return { ...state, details: action.payload };
     default:
       return state;
   }

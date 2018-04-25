@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-
 import { FlatList, Dimensions, View } from "react-native";
+import { connect } from "react-redux";
+
 import { Spinner } from "../common";
+import { details } from "../../actions";
 
 const { width, height } = Dimensions.get("window");
 
@@ -11,7 +13,7 @@ import colors from "../../../assets/colors";
 import fakus from "../../../Models/Data/Fake.json";
 import { images } from "../../../Models/Data/images";
 
-export default class MostRatedProductList extends Component {
+class MostRatedProductList extends Component {
   constructor(props) {
     super(props);
 
@@ -31,6 +33,10 @@ export default class MostRatedProductList extends Component {
       });
     }, 800);
   }
+  _onPressItem = (id: string) => {
+    console.log("Card pressed", id);
+    this.props.details(id);
+  };
 
   renderList() {
     if (this.state.isLoading) {
@@ -44,6 +50,8 @@ export default class MostRatedProductList extends Component {
           renderItem={({ item: rowData }) => {
             return (
               <MostRatedProductCard
+                id={rowData._id}
+                onPressItem={this._onPressItem}
                 image={images[rowData.image]}
                 title={rowData.title}
                 price={rowData.price}
@@ -51,7 +59,7 @@ export default class MostRatedProductList extends Component {
               />
             );
           }}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item, index) => item._id}
         />
       );
     }
@@ -66,3 +74,5 @@ export default class MostRatedProductList extends Component {
 const styles = {
   container: { backgroundColor: colors.whiteYellow }
 };
+
+export default connect(null, { details })(MostRatedProductList);

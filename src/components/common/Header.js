@@ -7,6 +7,7 @@ import colors from "../../../assets/colors";
 
 const Header = ({
   primaryIcon,
+  primaryAction,
   secondaryIcon,
   thirdIcon,
   children,
@@ -48,11 +49,14 @@ const Header = ({
           position: "relative"
         }}
       >
-        <Icon
-          name={primaryIcon}
-          size={size || 28}
-          color={color || colors.blackCoral}
-        />
+        <TouchableOpacity onPress={primaryAction}>
+          <Icon
+            name={primaryIcon}
+            size={size || 28}
+            color={color || colors.blackCoral}
+          />
+        </TouchableOpacity>
+
         <View style={logoContainer}>{children}</View>
         <View style={leftActionsContainer}>
           <Icon
