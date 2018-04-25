@@ -4,14 +4,15 @@ import { ListView, Dimensions, View } from "react-native";
 import { Spinner } from "../common";
 
 const { width, height } = Dimensions.get("window");
-
-import ProductCard from "./ProductCard";
+const CARD_WIDTH = width - 20;
+const CARD_HEIGHT = (height - 20) / 6;
+import ProductCardForList from "./ProductCardForList";
 import colors from "../../../assets/colors";
 
 import fakus from "../../../Models/Data/Fake.json";
 import { images } from "../../../Models/Data/images";
 
-export default class ProductList extends Component {
+export default class AllProductList extends Component {
   constructor(props) {
     super(props);
 
@@ -24,7 +25,7 @@ export default class ProductList extends Component {
       dataSource: ds.cloneWithRows([1, 2])
     };
 
-    this.itemWidth = width / 2 - 20;
+    this.itemWidth = CARD_WIDTH;
     this.renderRow = this.renderRow.bind(this);
   }
 
@@ -43,11 +44,11 @@ export default class ProductList extends Component {
     //const url = data.external_urls.spotify;
     //console.log(image);
     return (
-      <ProductCard
+      <ProductCardForList
         image={images[data.image]}
         title={data.title}
         price={data.price}
-        autre={data.autre}
+        shortDecription={data.autre}
       />
     );
   }
@@ -63,11 +64,8 @@ export default class ProductList extends Component {
             alignSelf: "center"
           }}
           contentContainerStyle={{
-            flexDirection: "row",
-            justifyContent: "space-between",
             flexWrap: "wrap",
-            paddingVertical: 10,
-            marginBottom: 50
+            paddingVertical: 10
           }}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}

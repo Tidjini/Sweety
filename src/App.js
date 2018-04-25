@@ -7,13 +7,13 @@ import colors from "../assets/colors";
 import { Button } from "./components/common";
 import AppIcon from "../assets/icons/icon";
 
-import ProductDetails from "./components/scenes/ProductDetails";
+import ProductList from "./components/scenes/ProductList";
 
 const { width, height } = Dimensions.get("window");
 const background = require("../assets/images/back_01.jpg");
 
 export default class App extends Component {
   render() {
-    return <ProductDetails />;
+    return <ProductList />;
   }
 }
