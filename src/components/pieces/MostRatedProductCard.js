@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, Dimensions, Image, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/EvilIcons";
+import LinearGradient from "react-native-linear-gradient";
 const { width, height } = Dimensions.get("window");
 
 const CARD_HEIGHT = 170;
@@ -17,7 +18,7 @@ export default class MostRatedProductCard extends Component {
       <TouchableOpacity onPress={this.onItemPressed}>
         <View
           style={{
-            borderRadius: 10,
+            borderRadius: 7,
             margin: 10,
             width: width - 100,
             height: CARD_HEIGHT,
@@ -29,7 +30,7 @@ export default class MostRatedProductCard extends Component {
             style={{
               width: width - 100,
               height: CARD_HEIGHT,
-              borderRadius: 10,
+              borderRadius: 7,
               resizeMode: "cover"
             }}
           />
@@ -39,7 +40,6 @@ export default class MostRatedProductCard extends Component {
               height: CARD_HEIGHT,
               borderRadius: 10,
               position: "absolute",
-              backgroundColor: "#D6EBC433",
               flexDirection: "column",
               justifyContent: "space-between"
             }}
@@ -51,46 +51,58 @@ export default class MostRatedProductCard extends Component {
                 margin: 10
               }}
             >
-              <Text
-                style={{
-                  borderRadius: 10,
-                  backgroundColor: "#FFFFFF80",
-                  paddingVertical: 2,
-                  paddingHorizontal: 5,
-                  color: colors.darkGunmetal,
-                  fontSize: 12,
+              <View style={{ flexDirection: "row" }}>
+                <Text
+                  style={{
+                    borderRadius: 15,
+                    backgroundColor: "#FFFFFF",
+                    paddingVertical: 5,
+                    paddingHorizontal: 7,
+                    color: colors.darkGunmetal,
+                    fontSize: 10,
+                    fontWeight: "bold"
+                  }}
+                >
+                  {price} DA
+                </Text>
+                <Text
+                  style={{
+                    marginLeft: 5,
+                    borderRadius: 10,
+                    backgroundColor: colors.teaGreen,
+                    paddingVertical: 5,
+                    paddingHorizontal: 7,
+                    fontSize: 10,
+                    color: colors.sapGreen,
+                    fontWeight: "bold"
+                  }}
+                >
+                  {autre}
+                </Text>
+              </View>
 
-                  fontWeight: "bold"
-                }}
-              >
-                {price}
-              </Text>
-              <Text
-                style={{
-                  borderRadius: 10,
-                  backgroundColor: "#FFFFFF80",
-                  paddingVertical: 2,
-                  paddingHorizontal: 5,
-                  fontSize: 12,
-                  color: colors.darkGunmetal,
-                  fontWeight: "bold"
-                }}
-              >
-                {autre}
-              </Text>
               <Icon name="heart" size={28} color={"#FFFFFF"} />
             </View>
-            <Text
+            <LinearGradient
+              colors={["#00000000", "#00000030", "#00000060"]}
               style={{
-                borderRadius: 10,
-                fontWeight: "bold",
-                color: colors.darkGunmetal,
-                justifyContent: "space-between",
-                margin: 10
+                height: 50
               }}
             >
-              {title}
-            </Text>
+              <Text
+                style={{
+                  borderRadius: 10,
+                  fontWeight: "bold",
+                  color: "#FFF",
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  marginTop: 20,
+                  marginLeft: 10
+                }}
+              >
+                {title}
+              </Text>
+            </LinearGradient>
           </View>
         </View>
       </TouchableOpacity>

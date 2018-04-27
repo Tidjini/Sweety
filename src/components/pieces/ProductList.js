@@ -57,21 +57,22 @@ export default class ProductList extends Component {
       return <Spinner />;
     } else {
       return (
-        <ListView
-          showsVerticalScrollIndicator={false}
-          style={{
-            alignSelf: "center"
-          }}
-          contentContainerStyle={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            paddingVertical: 10,
-            marginBottom: 50
-          }}
-          dataSource={this.state.dataSource}
-          renderRow={this.renderRow}
-        />
+        <View style={{ flex: 1, backgroundColor: "#FCFCFC" }}>
+          <ListView
+            showsVerticalScrollIndicator={false}
+            style={{
+              alignSelf: "center"
+            }}
+            contentContainerStyle={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              marginBottom: 10
+            }}
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+          />
+        </View>
       );
     }
   }

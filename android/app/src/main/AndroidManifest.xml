@@ -2,6 +2,7 @@
     package="com.sweety">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
@@ -9,6 +10,7 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
+      android:largeHeap="true"
       android:theme="@style/AppTheme">
       <activity
         android:name=".MainActivity"

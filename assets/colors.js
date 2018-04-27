@@ -4,5 +4,6 @@ export default {
   teaGreen: "#D6EBC4",
   redOrange: "#EF5350",
   darkGunmetal: "#171E32",
-  blackCoral: "#5C606A"
+  blackCoral: "#5C606A",
+  blackCoral_11: "#5C606A11"
 };

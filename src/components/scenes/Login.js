@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
 import { Image, Text, View, Dimensions, TextInput } from "react-native";
-
+import { connect } from "react-redux";
+import { main } from "../../actions";
 //created library and Component
 import colors from "../../../assets/colors";
 import { Button, Input, OutlineButton, CircularButton } from "../common";
@@ -12,7 +13,10 @@ const background = require("../../../assets/images/back_01.jpg");
 const google = require("../../../assets/icons/google.png");
 const facebook = require("../../../assets/icons/facebook.png");
 
-export default class Login extends Component {
+class Login extends Component {
+  onEnterToMain() {
+    this.props.main();
+  }
   render() {
     const {
       backImage,
@@ -42,7 +46,11 @@ export default class Login extends Component {
             <TextInput style={{ marginTop: -7 }} />
           </View>
           <View style={buttons}>
-            <Button buttonWidth={width - 200} buttonHeight={35}>
+            <Button
+              buttonWidth={width - 200}
+              buttonHeight={35}
+              onPress={this.onEnterToMain.bind(this)}
+            >
               <Text>SIGN IN</Text>
             </Button>
           </View>
@@ -51,6 +59,7 @@ export default class Login extends Component {
               buttonWidth={48}
               buttonHeight={48}
               color={"#FFFFFF"}
+              onPress={this.onEnterToMain.bind(this)}
             >
               <Image source={google} style={circularButtonImage} />
             </CircularButton>
@@ -58,6 +67,7 @@ export default class Login extends Component {
               buttonWidth={48}
               buttonHeight={48}
               color={"#FFFFFF"}
+              onPress={this.onEnterToMain.bind(this)}
             >
               <Image source={facebook} style={circularButtonImage} />
             </CircularButton>
@@ -101,3 +111,5 @@ const styles = {
     marginLeft: 10
   }
 };
+
+export default connect(null, { main })(Login);

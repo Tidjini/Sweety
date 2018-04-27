@@ -21,7 +21,7 @@ export default class ProductList extends Component {
   render() {
     const { headerTitle, headerTitlePrimary, headerTitleSecondary } = styles;
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ backgroundColor: "#FCFCFC" }}>
         <Header
           primaryIcon="navicon"
           secondaryIcon="search"

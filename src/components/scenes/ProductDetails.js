@@ -11,13 +11,44 @@ const product = require("../../../assets/products/img_25.jpg");
 const profile = require("../../../assets/profiles/pro_02.jpg");
 const { width, height } = Dimensions.get("window");
 
+import fakus from "../../../Models/Data/Fake.json";
+import { images } from "../../../Models/Data/images";
+
 class ProductDetails extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      image: null,
+      productName: ""
+    };
+  }
+  initProductInfo() {
+    const productItem = fakus.find(item => {
+      return item._id == this.props.itemId;
+    });
+
+    if (product == undefined) {
+      // TODO: Invalid state the id not match we data;
+      return;
+    } else {
+      this.setState({
+        image: images[productItem.image],
+        productName: productItem.title
+      });
+    }
+  }
+  componentWillMount() {
+    this.initProductInfo();
+  }
   onReturnPress() {
     console.log("return action");
     Actions.pop();
   }
+
   render() {
     const { headerTitle, headerTitlePrimary, headerTitleSecondary } = styles;
+    const { image, productName } = this.state;
     return (
       <View
         style={{
@@ -26,7 +57,7 @@ class ProductDetails extends Component {
         }}
       >
         <Image
-          source={product}
+          source={image}
           style={{ width, height: height - 200, resizeMode: "cover" }}
         />
         <View
@@ -99,7 +130,7 @@ class ProductDetails extends Component {
                   color: colors.darkGunmetal
                 }}
               >
-                Pollard Nguyen
+                {productName}
               </Text>
               <View
                 style={{

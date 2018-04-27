@@ -35,7 +35,7 @@ class Main extends Component {
       browseProducts
     } = styles;
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor: "#FCFCFC" }}>
         <Header primaryIcon="navicon" secondaryIcon="search" thirdIcon="heart">
           <View style={headerTitle}>
             <Text style={headerTitlePrimary}>Sweety</Text>
@@ -44,7 +44,7 @@ class Main extends Component {
         </Header>
         <ScrollView style={scrollStyle}>
           <View style={scrollView}>
-            <Text style={mostRated}>Most Rated</Text>
+            <Text style={mostRated}>Tandances</Text>
             <OutlineButton onPress={this.viewAllProduct.bind(this)}>
               <Text
                 style={{
@@ -52,12 +52,12 @@ class Main extends Component {
                   color: colors.sapGreen
                 }}
               >
-                View All
+                Voir Tous
               </Text>
             </OutlineButton>
           </View>
           <MostRatedProductList />
-          <Text style={browseProducts}>Browse All product</Text>
+          <Text style={browseProducts}>Populair</Text>
           <ProductList />
         </ScrollView>
       </View>

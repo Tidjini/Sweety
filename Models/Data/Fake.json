@@ -4,95 +4,95 @@
     "index": 0,
     "image": 6,
     "title": "Pollard Nguyen",
-    "price": 1075.8,
-    "autre": "green"
+    "price": 1075,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd215b9a9e4f7890b25e",
     "index": 1,
     "image": 24,
     "title": "Finley Rush",
-    "price": 1103.74,
-    "autre": "green"
+    "price": 1103,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21d1d25bd25569ecb4",
     "index": 2,
     "image": 0,
     "title": "Marquez Tyler",
-    "price": 2866.22,
-    "autre": "brown"
+    "price": 2866,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21b20cea840843ad5c",
     "index": 3,
     "image": 9,
     "title": "Stevens Camacho",
-    "price": 676.21,
-    "autre": "green"
+    "price": 676,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21f3fdea460fb4cc5d",
     "index": 4,
     "image": 11,
     "title": "Flores Mays",
-    "price": 920.74,
-    "autre": "blue"
+    "price": 920,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21a75e48a9d1ebb17c",
     "index": 5,
     "image": 4,
     "title": "Glenn Patton",
-    "price": 2245.86,
-    "autre": "blue"
+    "price": 2245,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21f15ebfd86a8f3013",
     "index": 6,
     "image": 8,
     "title": "Jennifer Mason",
-    "price": 1213.22,
-    "autre": "green"
+    "price": 1213,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21bb895817989c08f8",
     "index": 7,
     "image": 1,
     "title": "Bonnie Bean",
-    "price": 1214.52,
-    "autre": "blue"
+    "price": 1214,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd2143b6628106d80ff2",
     "index": 8,
     "image": 24,
     "title": "Cheryl Horton",
-    "price": 1729.29,
-    "autre": "blue"
+    "price": 1729,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd21e4be785a376f29ac",
     "index": 9,
     "image": 22,
     "title": "Swanson Britt",
-    "price": 2216.09,
-    "autre": "blue"
+    "price": 2216,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd2187120c6f1e345269",
     "index": 10,
     "image": 15,
     "title": "Malone Ball",
-    "price": 2697.5,
-    "autre": "blue"
+    "price": 2697,
+    "autre": "important thing"
   },
   {
     "_id": "5adddd2109a64ccdf6470aa1",
     "index": 11,
     "image": 3,
     "title": "Glass Workman",
-    "price": 1645.66,
-    "autre": "brown"
+    "price": 1645,
+    "autre": "important thing"
   }
 ]

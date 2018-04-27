@@ -29,7 +29,7 @@ export default ({ price, autre, image, title }) => {
       <Image
         source={image}
         style={{
-          height: 120,
+          height: 130,
           width: CARD_WIDTH,
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10,
@@ -61,29 +61,35 @@ export default ({ price, autre, image, title }) => {
       >
         <Text
           style={{
-            fontWeight: "bold",
-            color: colors.sapGreen
+            marginLeft: 5,
+            borderRadius: 10,
+            borderWidth: 1,
+            borderColor: colors.blackCoral_11,
+            backgroundColor: "#FFF",
+            paddingVertical: 2,
+            paddingHorizontal: 5,
+            fontSize: 9,
+            color: colors.blackCoral,
+            fontWeight: "bold"
           }}
         >
-          {price}
+          1 jour
         </Text>
-        <View
+
+        <Text
           style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center"
+            marginLeft: 5,
+            borderRadius: 10,
+            backgroundColor: colors.teaGreen,
+            paddingVertical: 5,
+            paddingHorizontal: 7,
+            fontSize: 10,
+            color: colors.sapGreen,
+            fontWeight: "bold"
           }}
         >
-          <Text
-            style={{
-              fontWeight: "bold",
-              color: colors.redOrange
-            }}
-          >
-            {autre}
-          </Text>
-          <Icon name="heart" size={18} color={colors.redOrange} />
-        </View>
+          {autre}
+        </Text>
       </View>
     </View>
   );

@@ -22,7 +22,9 @@ export default ({
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
         borderRadius: 5,
+        backgroundColor: "#FFF",
         shadowColor: "#000000AA",
+
         shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 2,
         elevation: 2,
@@ -56,7 +58,7 @@ export default ({
             fontWeight: "bold"
           }}
         >
-          {price}
+          {price} DA
         </Text>
 
         <Image

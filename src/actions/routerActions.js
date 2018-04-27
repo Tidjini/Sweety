@@ -33,7 +33,7 @@ export const login = () => {
   return dispatch => {
     setTimeout(() => {
       dispatch({ type: ENTER_LOGIN });
-      Actions.login_stack();
+      Actions.loginStack();
     }, 50);
   };
 };
